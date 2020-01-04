@@ -1,0 +1,45 @@
+body {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+}
+
+/*  header ... */
+.page-title {
+    font-size: 36px;
+    font-family: Lobster, cursive;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-image: -o-linear-gradient(blue, pink, MediumVioletRed);
+    background-image: linear-gradient(blue, pink, MediumVioletRed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main {
+padding: 25px;
+margin: auto;
+}
+
+main p {
+  font-family: "Roboto", sans-serif;
+  color:#3366cc;
+  text-align: center;
+}
+
+/* footer..... */
+.page-footer {
+    font-family: "Libre Caslon Text", serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 225px;
+    width: 100%;
+    text-align: center;
+    background-color: lightblue;
+}
