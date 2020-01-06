@@ -1,0 +1,25 @@
+{
+  "name": "movie_api",
+  "version": "1.0.0",
+  "description": "myFlix-database",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtp2019/myFlix.git"
+  },
+  "keywords": [],
+  "author": "Jacqueline Purification",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtp2019/myFlix/issues"
+  },
+  "homepage": "https://github.com/jtp2019/myFlix#readme"
+}
