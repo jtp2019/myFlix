@@ -10,7 +10,6 @@ body {
     font-weight: 700;
     text-align: center;
     margin-top: 5%;
-    margin-bottom: 5%;
     background-image: -o-linear-gradient(blue, pink, MediumVioletRed);
     background-image: linear-gradient(blue, pink, MediumVioletRed);
     -webkit-background-clip: text;
@@ -20,12 +19,29 @@ body {
 main {
 padding: 25px;
 margin: auto;
+justify-content: center;
 }
 
 main p {
   font-family: "Roboto", sans-serif;
   color:#3366cc;
   text-align: center;
+}
+
+table {
+  table-layout: auto;
+  border-spacing: 10px;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  justify-content: center;
 }
 
 /* footer..... */
