@@ -1,11 +1,45 @@
 body {
     font-family: "Roboto", sans-serif;
+    font-size: 12px;
     width: 100%;
+}
+
+h2 {
+  font-size: 26px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2%;
+  background-image: -o-linear-gradient(red, pink, green);
+  background-image: linear-gradient(red, pink, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h5 {
+   font-size: 14px;
+   font-weight: 700;
+   color: #009900;
+}
+h4 {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2%;
+  background-image: -o-linear-gradient(red, green);
+  background-image: linear-gradient(red, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h6 {
+   font-size: 10px;
+   font-weight: 700;
 }
 
 /*  header ... */
 .page-title {
-    font-size: 36px;
+    font-size: 46px;
     font-family: Lobster, cursive;
     font-weight: 700;
     text-align: center;

@@ -1,4 +1,4 @@
-Data for Postman
+INSERTED THOSE DATA TO POSTMAN (2.5)
 
 // List of the movies
 let Movies = [
@@ -161,7 +161,7 @@ let Directors = [
 ];
 
 
-// User information
+// Users information
 let Users = [
     {
         id : '1',
@@ -189,7 +189,7 @@ let Favorites = [
     }
 ]
 
-Data for MongoDB
+DATA FOR MONGODB(2.7)
 
 db.movies.insertMany ([
   {
@@ -200,6 +200,7 @@ db.movies.insertMany ([
     },
     Director :{ Name: 'Ridley Scott', Bio: 'Sir Ridley Scott is an English filmmaker', Birth: 1937
     },
+    Actors : ['Russell Crowe', 'Joaquin Phoenix', 'Connie Nielsen'],
     ImageURL: 'Gladiator.png',
     Featured: true
 },
@@ -211,6 +212,7 @@ db.movies.insertMany ([
      },
      Director: { Name: 'Steven Spielberg', Bio: 'Steven Allan Spielberg is an American director and producer', Birth: 1946
      },
+     Actors : ['Liam Neeson', 'Ralph Fiennes', 'Ben Kingsley'],
     ImageURL: 'Schindler\'s List.png',
     Featured: true
 },
@@ -222,6 +224,7 @@ db.movies.insertMany ([
     },
     Director: { Name: 'Steven Spielberg', Bio: 'Steven Allan Spielberg is an American director and producer', Birth: 1946
     },
+    Actors : ['Harrison Ford', 'Sean Connery', 'Alison Doody'],
     ImageURL: 'Indiana Jones and the Kingdom of the Crystal Skull.png',
     Featured: 'true'
 },
@@ -233,6 +236,7 @@ db.movies.insertMany ([
     },
     Director: { Name: 'Steven Spielberg', Bio: 'Steven Allan Spielberg is an American director and producer', Birth: 1946
     },
+    Actors : ['Sam Neill', 'Laura Dern', 'Jeff Goldblum'],
     ImageURL: 'Jurassic Park.png',
     Featured: true
 },
@@ -244,6 +248,7 @@ db.movies.insertMany ([
     },
     Director: {	Name: 'Steven Spielberg',	Bio: 'Steven Allan Spielberg is an American director and producer', Birth: 1946
     },
+    Actors : ['Harrison Ford', 'Kate Capshaw', 'Ke Huy Quan'],
     ImageURL: 'Indiana Jones and the Temple of Doom.png',
     Featured: true
 },
@@ -255,6 +260,7 @@ db.movies.insertMany ([
     },
     Director: {	Name: 'James Cameron', Bio: 'James Francis Cameron CC is a Canadian filmmaker, artist, and environmentalist, who is best known for making science fiction and epic films for the Hollywood mainstream', Birth: 1954
     },
+    Actors : ['Sam Worthington', 'Zoe Saldana', 'Sigourney Weaver'],
     ImageURL: 'Avatar.png',
     Featured: true
 },
@@ -266,6 +272,7 @@ db.movies.insertMany ([
     },
     Director: { Name: 'Quentin Tarantino', Bio: 'Quentin Jerome Tarantino is an American filmmaker and actor', Birth: 1963
     },
+    Actors : ['Uma Thurman', 'David Carradine', 'Daryl Hannah'],
     ImageURL: 'Kill Bill.png',
     Featured: true
   },
@@ -277,6 +284,7 @@ db.movies.insertMany ([
     },
     Director:  { Name: 'Oliver Stone', Bio: 'William Oliver Stone is an American filmmaker, director, and writer', Birth: 1946
     },
+    Actors : ['Hiep Thi Le', 'Tommy Lee Jones', 'Haing S. Ngor'],
     ImageURL: 'Heaven & Earth.png',
     Featured: true
   },
@@ -288,6 +296,7 @@ db.movies.insertMany ([
     },
     Director: { Name: 'Guillermo del Toro', Bio: 'Guillermo del Toro Gómez is a Mexican filmmaker, author, actor, and former special effects makeup artist', Birth: 1964
     },
+    Actors : ['Sally Hawkins', 'Octavia Spencer', 'Michael Shannon'],
     ImageURL: 'The Shape of Water.png',
     Featured: true
   },
@@ -299,6 +308,7 @@ db.movies.insertMany ([
     },
     Director: {	Name: 'Danny Boyle', Bio: 'Daniel Francis Boyle is an English director of film and stage, producer, and screenwriter', Birth: 1956
     },
+    Actors : ['Dev Patel', 'Freida Pinto', 'Saurabh Shukla'],
     ImageURL: 'Slumdog Millionaire.png',
     Featured: true
   },
@@ -310,6 +320,7 @@ db.movies.insertMany ([
     },
     Director: {	Name: 'Park Hoon-jung', Bio: 'Park Hoon-jung is a South Korean film director and screenwriter', Birth: 1977
     },
+    Actors : ['Min-sik Choi', 'Man-sik Jeong', 'Seok-won Jeong'],
     ImageURL: 'The Tiger: An Old Hunter\'s Tale.png',
     Featured: true
 },
@@ -321,6 +332,7 @@ db.movies.insertMany ([
     },
     Director: {	Name: 'Andrew Adamson', Bio: 'Andrew Ralph Adamson MNZM is a New Zealand film director, producer and screenwriter based mainly in Los Angeles', Birth: 1966
     },
+    Actors : ['Tilda Swinton', 'Georgie Henley', 'William Moseley'],
     ImageURL: 'The Chronicles of Narnia.png',
     Featured: true
   },
@@ -332,46 +344,416 @@ db.movies.insertMany ([
     },
     Director: { Name: 'Stephen Sommers', Bio: 'Stephen Sommers is an American film director and screenwriter best known for big-budget movies', Birth: 1962
     },
+    Actors : ['Brendan Fraser', 'Rachel Weisz', 'John Hannah'],
     ImageURL: 'The Mummy.png',
     Featured: true
   },
 ]);
 
 
-db.users.insertMany([
+db.users.insertMany ([
   {
       username : 'jonedoe123',
       password : 'password123',
       email : 'example1@gmail.com',
       Birthday: new Date('1977-02-19'),
-      Favorites : ['Gladiator', 'Indiana Jones and the Kingdom of the Crystal Skull']
+      FavoriteMovies : ['5e4063921733a4ac0b01c8e0', '5e4063921733a4ac0b01c8e1', '5e4063921733a4ac0b01c8e2']
   },
   {
       username : 'jack1',
       password : 'password1234',
       email : 'example2@gmail.com',
       Birthday: new Date('1988-04-20'),
-      Favorites : ['Jurassic Park', 'Indiana Jones and the Temple of Doom', 'Avatar']
+      FavoriteMovies : ['5e4063921733a4ac0b01c8e3', '5e4063921733a4ac0b01c8e4', '5e4063921733a4ac0b01c8e5']
   },
   {
       username : 'juli1',
       password : 'password1235',
       email : 'example3@gmail.com',
       Birthday: new Date('1999-05-21'),
-      Favorites : ['Kill Bill', 'Heaven & Earth', 'The Shape of Water']
+      FavoriteMovies : ['5e4063921733a4ac0b01c8e6', '5e4063921733a4ac0b01c8e7', '5e4063921733a4ac0b01c8e8']
   },
   {
       username : 'jacky2',
       password : 'password1236',
       email : 'example4@gmail.com',
       Birthday: new Date('1952-06-22'),
-      Favorites : ['Slumdog Millionaire', 'The Chronicles of Narnia']
+      FavoriteMovies : ['5e4063921733a4ac0b01c8e9', '5e4063921733a4ac0b01c8ea', '5e4063921733a4ac0b01c8eb']
   },
   {
       username : 'juliet2',
       password : 'password1237',
       email : 'example5@gmail.com',
       Birthday: new Date('1962-07-23'),
-      Favorites : ['The Mummy']
+      FavoriteMovies : ['5e4063921733a4ac0b01c8ec', '5e4063921733a4ac0b01c8e9']
   }
   ])
+
+
+  OUTCOME FROM THE POSTMAN AND MONGODB(2.8)
+
+///MOVIES Data
+
+  [
+      {
+          "Genre": {
+              "Name": "Action",
+              "Description": "Action film is a film Genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, and frantic chases. Action films tend to Feature a resourceful hero struggling against incredible odds, which include life-threatening situations, a villain, or a pursuit which usually concludes in victory for the hero."
+          },
+          "Director": {
+              "Name": "Ridley Scott",
+              "Bio": "Sir Ridley Scott is an English filmmaker",
+              "Birth": "1937"
+          },
+          "Actors": [
+              "Russell Crowe",
+              "Joaquin Phoenix",
+              "Connie Nielsen"
+          ],
+          "_id": "5e4063921733a4ac0b01c8e0",
+          "Title": "Gladiator",
+          "Year": "2008",
+          "Description": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+          "ImageURL": "Gladiator.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Drama",
+              "Description": "In film and television, drama is a Genre of narrative fiction or semi-fiction intended to be more serious than humorous in tone. All forms of cinema or television that involve fictional stories are forms of drama in the broader sense if their storytelling is achieved by means of actors who represent (mimesis) characters."
+          },
+          "Director": {
+              "Name": "Steven Spielberg",
+              "Bio": "Steven Allan Spielberg is an American director and producer",
+              "Birth": "1946"
+          },
+          "Actors": [
+              "Liam Neeson",
+              "Ralph Fiennes",
+              "Ben Kingsley"
+          ],
+          "_id": "5e4063921733a4ac0b01c8e1",
+          "Title": "Schindler's List",
+          "Year": "1993",
+          "Description": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+          "ImageURL": "Schindler's List.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Thriller",
+              "Description": "Thriller film, also known as suspense film or suspense thriller, is a broad film Genre that evokes excitement and suspense in the audience. Tension is created by delaying what the audience sees as inevitable, and is built through situations that are menacing or where escape seems impossible."
+          },
+          "Director": {
+              "Name": "Steven Spielberg",
+              "Bio": "Steven Allan Spielberg is an American director and producer",
+              "Birth": "1946"
+          },
+          "Actors": [
+              "Harrison Ford",
+              "Sean Connery",
+              "Alison Doody"
+          ],
+          "_id": "5e4063921733a4ac0b01c8e2",
+          "Title": "Indiana Jones and the Kingdom of the Crystal Skull",
+          "Year": "2008",
+          "Description": "A renowned archaeologist and explorer, Indiana Jones, teams up with a young man in order to unearth the mystery behind the legendary crystal skulls.",
+          "ImageURL": "Indiana Jones and the Kingdom of the Crystal Skull.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Fantasy",
+              "Description": "Fantasy films are films that belong to the fantasy Genre with fantastic themes, usually magic, supernatural events, mythology, folklore, or exotic fantasy worlds. The Genre is considered a form of speculative fiction alongside science fiction films and horror films, although the Genres do overlap. Fantasy films often have an element of magic, myth, wonder, escapism, and the extraordinary."
+          },
+          "Director": {
+              "Name": "Steven Spielberg",
+              "Bio": "Steven Allan Spielberg is an American director and producer",
+              "Birth": "1946"
+          },
+          "Actors": [
+              "Sam Neill",
+              "Laura Dern",
+              "Jeff Goldblum"
+          ],
+          "_id": "5e4063921733a4ac0b01c8e3",
+          "Title": "Jurassic Park",
+          "Year": "1993",
+          "Description": "John Hammond, an entrepreneur, opens a wildlife park containing cloned dinosaurs. However, a breakdown of the island's security system causes the creatures to escape and bring about chaos.",
+          "ImageURL": "Jurassic Park.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Thriller",
+              "Description": "Thriller film, also known as suspense film or suspense thriller, is a broad film Genre that evokes excitement and suspense in the audience. Tension is created by delaying what the audience sees as inevitable, and is built through situations that are menacing or where escape seems impossible."
+          },
+          "Director": {
+              "Name": "Steven Spielberg",
+              "Bio": "Steven Allan Spielberg is an American director and producer",
+              "Birth": "1946"
+          },
+          "Actors": [
+              "Harrison Ford",
+              "Kate Capshaw",
+              "Ke Huy Quan"
+          ],
+          "_id": "5e4063921733a4ac0b01c8e4",
+          "Title": "Indiana Jones and the Temple of Doom",
+          "Year": "1984",
+          "Description": "Indiana Jones, a legendary archaeologist, finds himself in India, where a bunch of poor villagers reach out to him to track down an ancient stone that has been stolen by an evil priest.",
+          "ImageURL": "Indiana Jones and the Temple of Doom.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Fantasy",
+              "Description": "Fantasy films are films that belong to the fantasy Genre with fantastic themes, usually magic, supernatural events, mythology, folklore, or exotic fantasy worlds. The Genre is considered a form of speculative fiction alongside science fiction films and horror films, although the Genres do overlap. Fantasy films often have an element of magic, myth, wonder, escapism, and the extraordinary."
+          },
+          "Director": {
+              "Name": "James Cameron",
+              "Bio": "James Francis Cameron CC is a Canadian filmmaker, artist, and environmentalist, who is best known for making science fiction and epic films for the Hollywood mainstream",
+              "Birth": "1954"
+          },
+          "Actors": [
+              "Sam Worthington",
+              "Zoe Saldana",
+              "Sigourney Weaver"
+          ],
+          "_id": "5e4063921733a4ac0b01c8e5",
+          "Title": "Avatar",
+          "Year": "1998",
+          "Description": "Jake, a paraplegic marine, replaces his brother on the Navi inhabited Pandora for a corporate mission. He is accepted by the natives as one of their own but he must decide where his loyalties lie.",
+          "ImageURL": "Avatar.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Action",
+              "Description": "Action film is a film Genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, and frantic chases. Action films tend to Feature a resourceful hero struggling against incredible odds, which include life-threatening situations, a villain, or a pursuit which usually concludes in victory for the hero."
+          },
+          "Director": {
+              "Name": "Quentin Tarantino",
+              "Bio": "Quentin Jerome Tarantino is an American filmmaker and actor",
+              "Birth": "1963"
+          },
+          "Actors": [
+              "Uma Thurman",
+              "David Carradine",
+              "Daryl Hannah"
+          ],
+          "_id": "5e4063921733a4ac0b01c8e6",
+          "Title": "Kill Bill",
+          "Year": "2003",
+          "Description": "A pregnant assassin, code-Named The Bride, goes into a coma for four Years after her ex-boss Bill brutally attacks her. When she wakes up, she sets out to seek revenge on him and his associates.",
+          "ImageURL": "Kill Bill.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Drama",
+              "Description": "In film and television, drama is a Genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone. All forms of cinema or television that involve fictional stories are forms of drama in the broader sense if their storytelling is achieved by means of actors who represent (mimesis) characters."
+          },
+          "Director": {
+              "Name": "Oliver Stone",
+              "Bio": "William Oliver Stone is an American filmmaker, director, and writer",
+              "Birth": "1946"
+          },
+          "Actors": [
+              "Hiep Thi Le",
+              "Tommy Lee Jones",
+              "Haing S. Ngor"
+          ],
+          "_id": "5e4063921733a4ac0b01c8e7",
+          "Title": "Heaven & Earth",
+          "Year": "1993",
+          "Description": "During the Vietnam War, a VietNamese woman struggles hustling on the streets, where she comes face to face with those involved in the conflict around her.",
+          "ImageURL": "Heaven & Earth.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Thriller",
+              "Description": "Thriller film, also known as suspense film or suspense thriller, is a broad film Genre that evokes excitement and suspense in the audience. Tension is created by delaying what the audience sees as inevitable, and is built through situations that are menacing or where escape seems impossible."
+          },
+          "Director": {
+              "Name": "Guillermo del Toro",
+              "Bio": "Guillermo del Toro Gómez is a Mexican filmmaker, author, actor, and former special effects makeup artist",
+              "Birth": "1964"
+          },
+          "Actors": [
+              "Sally Hawkins",
+              "Octavia Spencer",
+              "Michael Shannon"
+          ],
+          "_id": "5e4063921733a4ac0b01c8e8",
+          "Title": "The Shape of Water",
+          "Year": "2018",
+          "Description": "At a top secret research facility in the 1960s, a lonely janitor forms a unique relationship with an amphiBious creature that is being held in captivity.",
+          "ImageURL": "The Shape of Water.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Drama",
+              "Description": "In film and television, drama is a Genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone. All forms of cinema or television that involve fictional stories are forms of drama in the broader sense if their storytelling is achieved by means of actors who represent (mimesis) characters."
+          },
+          "Director": {
+              "Name": "Danny Boyle",
+              "Bio": "Daniel Francis Boyle is an English director of film and stage, producer, and screenwriter",
+              "Birth": "1956"
+          },
+          "Actors": [
+              "Dev Patel",
+              "Freida Pinto",
+              "Saurabh Shukla"
+          ],
+          "_id": "5e4063921733a4ac0b01c8e9",
+          "Title": "Slumdog Millionaire",
+          "Year": "2009",
+          "Description": "A Mumbai teenager reflects on his life after being accused of cheating on the Indian version of Who Wants to be a Millionaire ?",
+          "ImageURL": "Slumdog Millionaire.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Action",
+              "Description": "Action film is a film Genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, and frantic chases. Action films tend to Feature a resourceful hero struggling against incredible odds, which include life-threatening situations, a villain, or a pursuit which usually concludes in victory for the hero."
+          },
+          "Director": {
+              "Name": "Park Hoon-jung",
+              "Bio": "Park Hoon-jung is a South Korean film director and screenwriter",
+              "Birth": "1977"
+          },
+          "Actors": [
+              "Min-sik Choi",
+              "Man-sik Jeong",
+              "Seok-won Jeong"
+          ],
+          "_id": "5e4063921733a4ac0b01c8ea",
+          "Title": "The Tiger: An Old Hunter's Tale",
+          "Year": "2015",
+          "Description": "A tragedy makes Man-duk, a revered hunter, give up hunting. He keeps declining the government's requests to hunt down the last remaining tiger in Korea until his own son suffers the beast's wrath.",
+          "ImageURL": "The Tiger: An Old Hunter's Tale.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Adventure",
+              "Description": "Adventure Films are exciting stories, with new experiences or exotic locales. Adventure films are very similar to the action film Genre, in that they are designed to provide an action-filled, energetic experience for the film viewer."
+          },
+          "Director": {
+              "Name": "Andrew Adamson",
+              "Bio": "Andrew Ralph Adamson MNZM is a New Zealand film director, producer and screenwriter based mainly in Los Angeles",
+              "Birth": "1966"
+          },
+          "Actors": [
+              "Tilda Swinton",
+              "Georgie Henley",
+              "William Moseley"
+          ],
+          "_id": "5e4063921733a4ac0b01c8eb",
+          "Title": "The Chronicles of Narnia",
+          "Year": "2005",
+          "Description": "While playing, Lucy and her siblings find a wardrobe that lands them in a mystical place called Narnia. Here they realise that it was fated and they must now unite with Aslan to defeat an evil queen.",
+          "ImageURL": "The Chronicles of Narnia.png",
+          "Featured": true
+      },
+      {
+          "Genre": {
+              "Name": "Adventure",
+              "Description": "Adventure Films are exciting stories, with new experiences or exotic locales. Adventure films are very similar to the action film Genre, in that they are designed to provide an action-filled, energetic experience for the film viewer."
+          },
+          "Director": {
+              "Name": "Stephen Sommers",
+              "Bio": "Stephen Sommers is an American film director and screenwriter best known for big-budget movies",
+              "Birth": "1962"
+          },
+          "Actors": [
+              "Brendan Fraser",
+              "Rachel Weisz",
+              "John Hannah"
+          ],
+          "_id": "5e4063921733a4ac0b01c8ec",
+          "Title": "The Mummy",
+          "Year": "1999",
+          "Description": "When an archaeologist couple's son finds the Bracelet of Anubis, it locks onto his wrist. A cult resurrects Imhotep, an evil Egyptian high priest, who needs the bracelet to defeat the Scorpion King.",
+          "ImageURL": "The Mummy.png",
+          "Featured": true
+      }
+  ]
+
+  // USERS DATA
+
+  [
+    {
+        "FavoriteMovies": [
+            "5e4063921733a4ac0b01c8e0",
+            "5e4063921733a4ac0b01c8e1",
+            "5e4063921733a4ac0b01c8e2"
+        ],
+        "_id": "5e44a1afc8733e0a91a9dab7",
+        "username": "jonedoe123",
+        "password": "password123",
+        "email": "example1@gmail.com",
+        "Birthday": "1977-02-19T00:00:00.000Z"
+    },
+    {
+        "FavoriteMovies": [
+            "5e4063921733a4ac0b01c8e3",
+            "5e4063921733a4ac0b01c8e4",
+            "5e4063921733a4ac0b01c8e5"
+        ],
+        "_id": "5e44a1afc8733e0a91a9dab8",
+        "username": "jack1",
+        "password": "password1234",
+        "email": "example2@gmail.com",
+        "Birthday": "1988-04-20T00:00:00.000Z"
+    },
+    {
+        "FavoriteMovies": [
+            "5e4063921733a4ac0b01c8e6",
+            "5e4063921733a4ac0b01c8e7",
+            "5e4063921733a4ac0b01c8e8"
+        ],
+        "_id": "5e44a1afc8733e0a91a9dab9",
+        "username": "juli1",
+        "password": "password1235",
+        "email": "example3@gmail.com",
+        "Birthday": "1999-05-21T00:00:00.000Z"
+    },
+    {
+        "FavoriteMovies": [
+            "5e4063921733a4ac0b01c8e9",
+            "5e4063921733a4ac0b01c8ea",
+            "5e4063921733a4ac0b01c8eb"
+        ],
+        "_id": "5e44a1afc8733e0a91a9daba",
+        "username": "jacky2",
+        "password": "password1236",
+        "email": "example4@gmail.com",
+        "Birthday": "1952-06-22T00:00:00.000Z"
+    },
+    {
+        "FavoriteMovies": [
+            "5e4063921733a4ac0b01c8ec",
+            "5e4063921733a4ac0b01c8e9"
+        ],
+        "_id": "5e44a1afc8733e0a91a9dabb",
+        "username": "juliet2",
+        "password": "password1237",
+        "email": "example5@gmail.com",
+        "Birthday": "1962-07-23T00:00:00.000Z"
+    },
+    {
+        "FavoriteMovies": [
+            "5e4063921733a4ac0b01c8e8"
+        ],
+        "_id": "5e49998b872c7929ac1882e5",
+        "Username": "jacky3",
+        "Password": "password1000",
+        "Email": "example7@gmail.com",
+        "Birthday": "1990-06-27T00:00:00.000Z",
+        "__v": 0
+    }
+]
