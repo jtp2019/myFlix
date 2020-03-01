@@ -26,7 +26,8 @@ const auth = require('./auth')(app);
  Directors = Models.Director;
 
  /* Mongoose local data base connection*/
-mongoose.connect('mongodb://localhost:27017/myFlixDB', {useUnifiedTopology: true, useNewUrlParser: true});
+/*mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true })*/
+mongoose.connect('mongodb+srv://myFlixDBadmin:12345@cluster0-4gxgz.mongodb.net/myFlixDB?retryWrites=true&w=majority', {useUnifiedTopology: true, useNewUrlParser: true});
 
 /* installed CORS */
 const cors = require('cors');
