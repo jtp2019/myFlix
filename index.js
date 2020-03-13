@@ -251,6 +251,6 @@ app.use(function (err, req, res, next){
 
 /* Listen for requests on port 8080*/
 var port = process.env.PORT || 3000;
-app.listen(port, "0.0.0.0:3000", function() {
+app.listen(port, "0.0.0.0", function() {
 console.log("Listening on Port 3000");
 });
