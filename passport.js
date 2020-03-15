@@ -1,7 +1,7 @@
 /*Installing Passport and Configuring Passport Strategies*/
-const passport = require('passport'),
-  LocalStrategy = require('passport-local').Strategy,
-  Models = require('./models.js'),
+const passport = require('passport');
+  LocalStrategy = require('passport-local').Strategy;
+  Models = require('./models.js');
   passportJWT = require('passport-jwt');
 
 var Users = Models.User;
@@ -42,4 +42,5 @@ passport.use(new JWTStrategy({
   .catch((error) => {
     return callback(error)
   });
+
 }));
