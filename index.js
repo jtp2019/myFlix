@@ -26,7 +26,14 @@ const auth = require('./auth')(app);
  Directors = Models.Director;
 
  /* Mongoose local data base connection*/
-mongoose.connect('mongodb://localhost:27017/myFlixDB', {useUnifiedTopology: true, useNewUrlParser: true});
+/*mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true }); */
+
+ /* Mongoose Studio 3T data base connection*/
+/*mongoose.connect('mongodb://localhost:27017/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&3t.uriVersion=3&3t.connection.name=myFlixDB', {useUnifiedTopology: true, useNewUrlParser: true}); ------> URL from studio 3T local*/
+mongoose.connect('mongodb+srv://myDBadmin@myflixdb-kow93.mongodb.net/myFlixDB?replicaSet=myFlixDB-shard-0&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1&3t.uriVersion=3&3t.connection.name=myFlixDB-shard-0&3t.databases=admin,test', { useNewUrlParser: true, useUnifiedTopology: true }); /*------> URL from studio 3T shared*/
+mongoose.connect('mongodb+srv://myDBadmin@myflixdb-kow93.mongodb.net/myFlixDB?replicaSet=myFlixDB-shard-0&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1&3t.uriVersion=3&3t.connection.name=myFlixDB-shard-0&3t.databases=admin,myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true }); /*------> URL from studio 3T shared*/
+/*MongoDB Atlas connection*/
+mongoose.connect ('mongodb+srv://myDBadmin:12345@myflixdb-kow93.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });/* URL from MongoDB atlas*/
 
 /* installed CORS */
 const cors = require('cors');
