@@ -4,10 +4,14 @@ const express = require('express');
 const morgan = require('morgan');
 const app = express();
 
-/* app.use initializations */
-  app.use(bodyParser.json());
+/* Middleware functions */
+  app.use(bodyParser.json());/*JSON Parsing*/
   app.use(morgan('common'));/*Logging with Morgan*/
-  app.use(express.static('public'));
+  app.use(express.static('public'));/*retrieves files from public folder*/
+  app.use('/client', express.static(path.join(__dirname, 'client', 'dist')));
+  app.get('/client/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+  });
 
 /* install validator*/
 const { check, validationResult } = require('express-validator');
@@ -25,15 +29,10 @@ const auth = require('./auth')(app);
  Genres = Models.Genre;
  Directors = Models.Director;
 
- /* Mongoose local data base connection*/
-/*mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true }); */
-
- /* Mongoose Studio 3T data base connection*/
-/*mongoose.connect('mongodb://localhost:27017/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&3t.uriVersion=3&3t.connection.name=myFlixDB', {useUnifiedTopology: true, useNewUrlParser: true}); ------> URL from studio 3T local*/
-mongoose.connect('mongodb+srv://myDBadmin@myflixdb-kow93.mongodb.net/myFlixDB?replicaSet=myFlixDB-shard-0&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1&3t.uriVersion=3&3t.connection.name=myFlixDB-shard-0&3t.databases=admin,test', { useNewUrlParser: true, useUnifiedTopology: true }); /*------> URL from studio 3T shared*/
-mongoose.connect('mongodb+srv://myDBadmin@myflixdb-kow93.mongodb.net/myFlixDB?replicaSet=myFlixDB-shard-0&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1&3t.uriVersion=3&3t.connection.name=myFlixDB-shard-0&3t.databases=admin,myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true }); /*------> URL from studio 3T shared*/
 /*MongoDB Atlas connection*/
-mongoose.connect ('mongodb+srv://myDBadmin:12345@myflixdb-kow93.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });/* URL from MongoDB atlas*/
+mongoose.connect('mongodb+srv://peche:admin1234@cluster0-fqxzg.mongodb.net/myFlixDB?retryWrites=true&w=majority',
+    { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true },
+);
 
 /* installed CORS */
 const cors = require('cors');
@@ -49,7 +48,7 @@ if(allowedOrigins.indexOf(origin) === -1){ /* If a specific origin is not found 
 }))
 
 /*CORS sites granted acces*/
-let allowedOrigins = ['http://localhost:8080', 'https://testsite.com'];
+const allowedOrigins = ['http://localhost:8080', 'http://localhost:5000', 'http://localhost:3000''http://localhost:1234', 'https://myflix-db1.herokuapp.com/', 'https://infinite-hollows-27811.herokuapp.com/'];
 
 /*INCORPORATING AUTHORIZATION INTO THE API ENDPOINTS*/
 /***MOVIE REQUESTS(5)***/
