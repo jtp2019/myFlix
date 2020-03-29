@@ -30,8 +30,10 @@ const auth = require('./auth')(app);
 
 /* MongoDB Atlas and Heroku data base connection*/
 mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connect(
-    'mongodb+srv://peche:admin1234@cluster0-fqxzg.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true },);
+/*mongoose.connect('mongodb://localhost:27017/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&3t.uriVersion=3&3t.connection.name=myFlixDB', {useUnifiedTopology: true, useNewUrlParser: true}); ------> URL from studio 3T local*/
+/*mongoose.connect('mongodb+srv://myDBadmin@myflixdb-kow93.mongodb.net/admin?replicaSet=myFlixDB-shard-0&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-1&3t.uriVersion=3&3t.connection.name=myFlixDB-shard-0&3t.databases=admin,test', { useNewUrlParser: true, useUnifiedTopology: true }); ------> URL from studio 3T shared*/
+mongoose.connect ('mongodb+srv://myDBadmin:12345@myflixdb-kow93.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });/* URL from MongoDB atlas*/
+/*mongoose.connect('mongodb+srv://peche:admin1234@cluster0-fqxzg.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true },);*/
 
 /* installed CORS */
 const cors = require('cors');
