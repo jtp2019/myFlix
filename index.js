@@ -29,9 +29,7 @@ const auth = require('./auth')(app);
 /*mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true })*/
 
 /* MongoDB Atlas and Heroku data base connection*/
-mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connect(
-    'mongodb+srv://peche:admin1234@cluster0-fqxzg.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true },);
+mongoose.connect ('mongodb+srv://myDBadmin:12345@myflixdb-kow93.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });/* URL from MongoDB atlas*/
 
 /* installed CORS */
 const cors = require('cors');
@@ -47,7 +45,7 @@ if(allowedOrigins.indexOf(origin) === -1){ /* If a specific origin is not found 
 }))
 
 /*CORS sites granted acces*/
-let allowedOrigins = ['http://localhost:8080', 'https://testsite.com', 'https://infinite-hollows-27811.herokuapp.com/','https://myflix-db.herokuapp.com'];
+let allowedOrigins = ['http://localhost:8080', 'https://testsite.com'];
 
 /*INCORPORATING AUTHORIZATION INTO THE API ENDPOINTS*/
 /***MOVIE REQUESTS(5)***/
