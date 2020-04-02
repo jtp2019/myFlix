@@ -45,7 +45,7 @@ if(allowedOrigins.indexOf(origin) === -1){ /* If a specific origin is not found 
 }))
 
 /*CORS sites granted acces*/
-let allowedOrigins = ['http://localhost:8080', 'https://testsite.com'];
+let allowedOrigins = ['http://localhost:8080', 'https://testsite.com', 'https://rhubarb-crisp-92657.herokuapp.com/'];
 
 /*INCORPORATING AUTHORIZATION INTO THE API ENDPOINTS*/
 /***MOVIE REQUESTS(5)***/
