@@ -50,14 +50,14 @@ let allowedOrigins = ['http://localhost:8080', 'https://testsite.com', 'https://
 /*INCORPORATING AUTHORIZATION INTO THE API ENDPOINTS*/
 /***MOVIE REQUESTS(5)***/
 /* Gets the list of data about ALL movies (Return a list of ALL movies to the user)*/
-app.get('/movies', passport.authenticate('jwt', {session : false}), (req, res) => {
+app.get('/movies', (req, res) => {
   Movies.find()
-  .then((movies) => {
-    res.status(201).json(movies);
-  }).catch((error) => {
-    console.error(error);
-    res.status(500).send('Error: ' + error);
-  });
+    .then((movies) => {
+      res.status(201).json(movies);
+    }).catch((error) => {
+      console.error(error);
+      res.status(500).send("Error: " + error);
+    });
 });
 
 /* Gets the data about a single movie, by name (Return data (description, genre,*/
