@@ -30174,7 +30174,7 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
         className: "movie-view"
       }, _react.default.createElement("img", {
         className: "movie-poster",
-        src: movie.image
+        src: movie.imageURL
       }), _react.default.createElement("div", {
         className: "movie-title"
       }, _react.default.createElement("span", {
@@ -30281,7 +30281,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       _axios.default.get('https://rhubarb-crisp-92657.herokuapp.com/movies').then(function (response) {
-        // Assign the result to the state
+        /* Assign the result to the state*/
         _this2.setState({
           movies: response.data
         });
@@ -30460,11 +30460,11 @@ var MyFlixApplication = /*#__PURE__*/function (_React$Component) {
 
   return MyFlixApplication;
 }(_react.default.Component);
-/* Finds the root of your app */
+/* Finds the root of my app */
 
 
 var container = document.getElementsByClassName('app-container')[0];
-/* Tells React to render your app in the root DOM element */
+/* Tells React to render my app in the root DOM element */
 
 _reactDom.default.render(_react.default.createElement(MyFlixApplication), container);
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/main-view/main-view":"components/main-view/main-view.jsx","./index.scss":"index.scss"}],"../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -30495,7 +30495,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55643" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50609" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
