@@ -1,5 +1,6 @@
 import React from "react";
-/* import { MainView } from '../main-view/main-view'; */
+
+/*import { MainView } from '../main-view/main-view';*/
 
 export class MovieView extends React.Component {
   constructor() {
@@ -8,11 +9,11 @@ export class MovieView extends React.Component {
   }
 
   render() {
-  const { movie } = this.props;
-  if (!movie) return null;
+   const { movie, onClick } = this.props;
+   if (!movie) return null;
 
    return (
-    <div className="movie-view">
+     <div className="movie-view">
     <img className="movie-poster" src={movie.ImageURL} />
 
     <div className="movie-title">
@@ -45,8 +46,8 @@ export class MovieView extends React.Component {
       <span className="value">{movie.Actors}</span>
     </div>
 
-    <button className="back-button" onClick={() => previous(movies)}>Back</button>
-    
+    <button className="back-button" onClick={() => onClick() }>Back</button>
+
   </div>
 );
 }

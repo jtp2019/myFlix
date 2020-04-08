@@ -30103,10 +30103,10 @@ var MovieCard = /*#__PURE__*/function (_React$Component) {
           movie = _this$props.movie,
           _onClick = _this$props.onClick;
       return _react.default.createElement("div", {
+        className: "movie-card",
         onClick: function onClick() {
           return _onClick(movie);
-        },
-        className: "movie-card"
+        }
       }, movie.Title);
     }
   }]);
@@ -30149,7 +30149,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-/* import { MainView } from '../main-view/main-view'; */
+/*import { MainView } from '../main-view/main-view';*/
 var MovieView = /*#__PURE__*/function (_React$Component) {
   _inherits(MovieView, _React$Component);
 
@@ -30168,7 +30168,9 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
   _createClass(MovieView, [{
     key: "render",
     value: function render() {
-      var movie = this.props.movie;
+      var _this$props = this.props,
+          movie = _this$props.movie,
+          _onClick = _this$props.onClick;
       if (!movie) return null;
       return _react.default.createElement("div", {
         className: "movie-view"
@@ -30214,7 +30216,7 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
       }, movie.Actors)), _react.default.createElement("button", {
         className: "back-button",
         onClick: function onClick() {
-          return previous(movies);
+          return _onClick();
         }
       }, "Back"));
     }
@@ -30292,20 +30294,33 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _axios.default.get('https://rhubarb-crisp-92657.herokuapp.com/movies').then(function (response) {
-        /* Assign the result to the state*/
+      _axios.default.get('https://rhubarb-crisp-92657.herokuapp.com/movies').then(function (res) {
+        console.log(res);
+        /*assign the result to a state*/
+
         _this2.setState({
-          movies: response.data
+          movies: res.data
         });
       }).catch(function (error) {
         console.log(error);
       });
     }
+    /*clicking movie to get more info*/
+
   }, {
     key: "onMovieClick",
     value: function onMovieClick(movie) {
       this.setState({
         selectedMovie: movie
+      });
+    }
+    /*button to return back*/
+
+  }, {
+    key: "onClick",
+    value: function onClick() {
+      this.setState({
+        selectedMovie: null
       });
     }
     /* This overrides the render() method of the superclass, No need to call super() though, as it does nothing by default */
@@ -30327,7 +30342,10 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       return _react.default.createElement("div", {
         className: "main-view"
       }, selectedMovie ? _react.default.createElement(_movieView.MovieView, {
-        movie: selectedMovie
+        movie: selectedMovie,
+        onClick: function onClick(movie) {
+          return _this3.onClick(movie);
+        }
       }) : movies.map(function (movie) {
         return _react.default.createElement(_movieCard.MovieCard, {
           key: movie._id,
@@ -30507,7 +30525,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54830" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49974" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
