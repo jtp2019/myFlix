@@ -29,7 +29,7 @@ const auth = require('./auth')(app);
 /*mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true })*/
 
 /* MongoDB Atlas and Heroku data base connection*/
-mongoose.connect ('mongodb+srv://myDBadmin:12345@myflixdb-kow93.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });/* URL from MongoDB atlas*/
+mongoose.connect ('mongodb+srv://myDBadmin:' + process.env.dbPassword + '@myflixdb-kow93.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });/* URL from MongoDB atlas*/
 
 /* installed CORS */
 const cors = require('cors');
@@ -122,11 +122,13 @@ app.post('/users', /* Validation logic here for request we can either use a chai
   check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
   check('Password', 'Password is required').not().isEmpty(),
   check('Email', 'Email does not appear to be valid').isEmail()],(req, res) => { /* check the validation object for errors */
+  console.log("Users req.body: " + JSON.stringify(req.body));
   let errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(422).json({ errors: errors.array()
     });
   }
+  console.log(req.body.Password);
   let hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Username : req.body.Username }) /*Search to see if a user with the requested username already exists*/
    .then(function(user) {
@@ -157,7 +159,7 @@ app.put('/users/:Username', passport.authenticate('jwt', {session : false}), (re
   Users.findOneAndUpdate({ Username : req.params.Username }, { $set : /*Allows User To Update Their Info*/
   {
     Username : req.body.Username,
-    Password : req.body.Password,
+    Password: hashedPassword,
     Email : req.body.Email,
     Birthday : req.body.Birthday
   }},
@@ -244,10 +246,11 @@ app.delete('/users/:Username', passport.authenticate('jwt', {session : false}), 
 });
 
 /* error handling*/
-app.use(function (err, req, res, next){
+app.use(function (err, req, res, next) {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
-})
+  res.status(500).send('Error: Something broke.');
+  next()
+});
 
 /* Listen for requests on port 8080*/
 var port = process.env.PORT || 3000;
