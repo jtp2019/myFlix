@@ -12,11 +12,13 @@
   "dependencies": {
     "@types/react": "^16.9.32",
     "@types/react-dom": "^16.9.6",
+    "@types/react-router-dom": "^5.1.4",
     "axios": "^0.19.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -24,5 +26,8 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "sass": "^1.26.3"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.2"
   }
 }

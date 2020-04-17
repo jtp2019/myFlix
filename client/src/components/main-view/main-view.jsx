@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 
-import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from '../movie-view/movie-view';
-import { LoginView } from '../login-view/login-view';
-import { RegistrationView } from '../registration-view/registration-view';
+/*sources of Bootstrap code*/
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+
+/*sources of all Individual files and folders*/
+import { MovieCard } from "../movie-card/movie-card";
+import { MovieView } from "../movie-view/movie-view";
+import { LoginView } from "../login-view/login-view";
+import { RegistrationView } from "../registration-view/registration-view";
 
 export class MainView extends Component {
-  constructor() {
+  constructor(props) {
  /* Call the superclass constructor so React can initialize it */
-    super();
+    super(props);
 /* Initialize the state to an empty object so we can destructure it later */
     this.state = {
       movies: null,
@@ -45,22 +48,20 @@ export class MainView extends Component {
     });
   }
 
-  onRegister = () => {
-    if(!this.state.register){
-      this.setState({register: true});
-    }else{
-      this.setState({register: false});
-    }
-
-  }
+  onRegister () {
+      if(!this.state.register){
+        this.setState({register: true});
+      }else{
+        this.setState({register: false});
+      }
+    };
 
    /* This overrides the render() method of the superclass, No need to call super() though, as it does nothing by default */
   render() {
     /* if the state isn't initialized, this will throw on runtime, before the data is initially loaded */
     const { movies, selectedMovie, user, register } = this.state;
-
     if (!user && !register) return <LoginView onClick={this.onRegister} onLoggedIn={user => this.onLoggedIn(user)} />
-    if (register) return <RegistrationView  onClick={this.onRegister}  />
+    if (register) return <RegistrationView  onClick={ this.onRegister.bind(this) }  />
   /* before the movies have been loaded */
     if (!movies) return <div className="main-view" />;
 
@@ -74,13 +75,11 @@ export class MainView extends Component {
                 movies.map(movie => (
                   <Col key={movie._id} xs={12} sm={6} md={4}>
                   <MovieCard key={movie._id} movie={movie} click={movie => this.onMovieClick(movie)} />
-                  </Col>
-                ))
-              )
-            }
+                   </Col>
+              ))
+            )}
           </Row>
         </Container>
-
       </div>
     );
   }

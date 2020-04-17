@@ -13,8 +13,11 @@ export const LoginView = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(username, password);
+    /* Send a request to the server for authentication */
+    /* then call props.onLoggedIn(username) */
     props.onLoggedIn(username);
   };
 
@@ -46,7 +49,7 @@ export const LoginView = (props) => {
           </Button>
           <Form.Text className="text-muted">
             No account? Sign up for a new account{" "}
-            <a href="#" onClick={() => props.onClick()}>
+            <a href="./registration-view" onClick={() => props.onClick()}>
               HERE
             </a>
           </Form.Text>
@@ -56,6 +59,6 @@ export const LoginView = (props) => {
   );
 };
 
-LoginView.PropTypes = {
+LoginView.propTypes = {
   onLoggedIn: PropTypes.func.isRequired,
 };

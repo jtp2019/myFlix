@@ -43,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/jtp2019/myFlix/issues"
   },
-  "homepage": "https://github.com/jtp2019/myFlix#readme"
+  "homepage": "https://github.com/jtp2019/myFlix#readme",
+  "optionalDependencies": {
+    "fsevents": "^2.1.2"
+  }
 }

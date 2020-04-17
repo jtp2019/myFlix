@@ -14,8 +14,11 @@ export const RegistrationView = (props) => {
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(username, password);
+    /* Send a request to the server for authentication */
+    /* then call props.onLoggedIn(username) */
     props.onRegister(username);
   };
 
@@ -67,7 +70,7 @@ export const RegistrationView = (props) => {
           </Button>
           <Form.Text className="text-muted">
             Already have an account? Log in{" "}
-            <a href="#" onClick={() => props.onClick()}>
+            <a href="../login-view" onClick={() => props.onClick()}>
               HERE
             </a>
           </Form.Text>
@@ -77,6 +80,6 @@ export const RegistrationView = (props) => {
   );
 };
 
-RegistrationView.PropTypes = {
+RegistrationView.propTypes = {
   onRegister: PropTypes.func.isRequired,
 };
