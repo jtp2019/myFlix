@@ -1,23 +1,17 @@
-.movie-view-card {
-  padding: 20px;
+.movie-view {
+  text-align: center;
 
-  .movie-view {
-    text-align: center;
-
-    .label {
-      font-weight: 700;
-    }
-
-    .movie-title, .movie-description, .movie-genre, .movie-director, .back-button {
-      text-align: left;
-    }
-
-    .buttons-container {
-      padding: 10px 0 0 0;
-    }
+  .label{
+    font-weight: 700;
   }
-
-  img {
-    width: 300px;
+  .movie-ImageURL,
+  .movie-Title,
+  .movie-Year,
+  .movie-Description,
+  .movie-Genre,
+  .movie-Director,
+  .movie-Actors
+  .back-button {
+    text-align: left;
   }
 }

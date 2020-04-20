@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-/*sources of Bootstrap code*/
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
 /*sources of all Individual files and folders*/
-import "./movie-view.scss";
+import "./movie-view.scss"
 
 export class MovieView extends Component {
   constructor() {
@@ -26,11 +25,7 @@ export class MovieView extends Component {
         <Row>
           <Col md={{ span: 6, offset: 3 }}>
             <div className="movie-view">
-              <img
-                className="movie-poster"
-                style={{ textAlign: "center" }}
-                src={movie.ImageURL}
-              />
+              <img className="movie-poster" style={{textAlign: "center"}} src={movie.ImageURL} />
               <div className="movie-title">
                 <span className="label">Title: </span>
                 <span className="value">{movie.Title}</span>
@@ -57,17 +52,15 @@ export class MovieView extends Component {
                 <span className="value">{movie.Actors}</span>
               </div>
 
-              <Button
-                variant="primary"
-                className="back-button"
-                onClick={() => previous(movie)}
-              >
-                Back
-              </Button>
+              <Button variant="primary" className="back-button" onClick={() => previous(movie)}>
+        Back
+  </Button>
             </div>
           </Col>
         </Row>
+
       </Container>
+
     );
   }
 }

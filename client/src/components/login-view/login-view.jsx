@@ -15,31 +15,30 @@ export const LoginView = (props) => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
-  e.preventDefault();/* Send a request to the server for authentication */
+        e.preventDefault();
 
-  axios.post('https://rhubarb-crisp-92657.herokuapp.com/login', {
-    Username: username,
-    Password: password
-  })
-  .then(response => {
-    const data = response.data;
-    props.onLoggedIn(data);
-  })
-  .catch(e => {
-    console.log('no such user')
-  });
-};
+      axios.post('https://rhubarb-crisp-92657.herokuapp.com/login', {
+      Username: username,
+      Password: password
+    })
+    .then(response => {
+      const data = response.data;
+      props.onLoggedIn(data);
+    })
+    .catch(e => {
+      console.log('no such user')
+    });
+  };
 
-  return (
-    <Container className="login-form">
+    return (
+        <Container className="login-form">
       <Form>
         <Form.Group controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>
-          <Form.Control type="email" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
+          <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
           <Form.Text className="text-muted">
           </Form.Text>
         </Form.Group>
-
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
@@ -55,9 +54,8 @@ export const LoginView = (props) => {
         </Form.Text>
       </Form>
     </Container>
-  )
+    )
 }
-
 LoginView.propTypes = {
-  onLoggedIn: PropTypes.func.isRequired
+    onLoggedIn: PropTypes.func.isRequired
 }
