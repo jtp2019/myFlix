@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 /*sources of Bootstrap code*/
 import Form from "react-bootstrap/Form";
@@ -13,11 +14,21 @@ export const LoginView = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
-    console.log(username, password);
-    props.onLoggedIn(username);
-  }
+  const handleSubmit = (e) => {
+  e.preventDefault();/* Send a request to the server for authentication */
 
+  axios.post('https://rhubarb-crisp-92657.herokuapp.com/login', {
+    Username: username,
+    Password: password
+  })
+  .then(response => {
+    const data = response.data;
+    props.onLoggedIn(data);
+  })
+  .catch(e => {
+    console.log('no such user')
+  });
+};
 
   return (
     <Container className="login-form">

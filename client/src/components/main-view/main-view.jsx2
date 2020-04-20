@@ -13,9 +13,9 @@ import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
 
 export class MainView extends Component {
-  constructor(props) {
+  constructor() {
     /* Call the superclass constructor so React can initialize it */
-    super(props);
+    super();
     /* Initialize the state to an empty object so we can destructure it later */
     this.state = {
       movies: null,
@@ -26,30 +26,17 @@ export class MainView extends Component {
   }
 
   componentDidMount() {
-    const endpoint = "https://rhubarb-crisp-92657.herokuapp.com/movies";
-    axios
-      .get(endpoint)
-      .then((res) => {
-        console.log(res.data[0]);
-        this.setState({ movies: res.data });
-      })
-      .catch((err) => console.log(err));
+    let accessToken = localStorage.getItem("token");
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem("user"),
+      });
+      this.getMovies(accessToken);
+    }
   }
 
-  /*clicking movie to get more info*/
-
-  onMovieClick(movie) {
-    this.setState({
-      selectedMovie: movie,
-    });
-  }
-
-  onLoggedIn(user) {
-    this.setState({
-      user,
-    });
-  }
-
+  /***USERS REQUESTS()***/
+  /* Add data for a new user (Allow new users to login/register)*/
   /*The auth information (user and token) received from the handleSubmit method which has been saved in localStorage*/
   onLoggedIn(authData) {
     /* authdata help to login console*/
@@ -61,6 +48,7 @@ export class MainView extends Component {
     this.getMovies(authData.token);
   }
 
+  /***MOVIE REQUESTS()***/
   /* Gets the list of ALL movie data (Return a list of ALL movies to the user)*/
   getMovies(token) {
     axios
@@ -78,7 +66,7 @@ export class MainView extends Component {
         console.log(error);
       });
   }
-  
+
   onRegister = () => {
     if(!this.state.register){
       this.setState({register: true});
@@ -87,46 +75,37 @@ export class MainView extends Component {
     }
   }
 
-
   /* This overrides the render() method of the superclass, No need to call super() though, as it does nothing by default */
-
   render() {
-    const { movies, selectedMovie, user, register } = this.state;
-    if (!user && !register) return <LoginView onClick={this.onRegister} onLoggedIn={user => this.onLoggedIn(user)} />
-    if (register) return <RegistrationView  onClick={this.onRegister}  />
-    /* before the movies have been loaded */
-    if (!movies) return <div className="main-view" />;
+  const { movies, selectedMovie, user, register } = this.state;
+  if (!user && !register) return <LoginView onClick={this.onRegister} onLoggedIn={user => this.onLoggedIn(user)} />
+  if (register) return <RegistrationView  onClick={this.onRegister}  />
+  /* before the movies have been loaded */
+  if (!movies) return <div className="main-view" />;
 
     return (
-      <div className="main-view">
-        <Container>
-          <Row>
-            {selectedMovie ? (
-              <MovieView
-                movie={selectedMovie}
-                previous={(movie) => this.onMovieClick(!movie)}
-              />
-            ) : (
-                movies.map(movie => (
+        <div className="main-view">
+          <Container>
+            <Row>
+              {selectedMovie ? (
+                <MovieView
+                  movie={selectedMovie}
+                  previous={(movie) => this.onMovieClick(!movie)}
+                />
+              ) : (
+                movies.map((movie) => (
                   <Col key={movie._id} xs={12} sm={6} md={4}>
-                  <MovieCard key={movie._id} movie={movie} click={movie => this.onMovieClick(movie)} />
+                    <MovieCard
+                      key={movie._id}
+                      movie={movie}
+                      click={(movie) => this.onMovieClick(movie)}
+                    />
                   </Col>
                 ))
-              )
-            }
-              movies.map((movie) => (
-                <Col key={movie._id} xs={12} sm={6} md={4}>
-                  <MovieCard
-                    key={movie._id}
-                    movie={movie}
-                    click={(movie) => this.onMovieClick(movie)}
-                  />
-                </Col>
-              ))
-            )}
-          </Row>
-        </Container>
-      </div>
+              )}
+            </Row>
+          </Container>
+        </div>
     );
   }
 }
