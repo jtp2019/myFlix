@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+
 import Container from "react-bootstrap/Container";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 
+/*sources of all Individual files and folders*/
 import "./movie-view.scss"
 
 export class MovieView extends Component {
@@ -12,7 +14,6 @@ export class MovieView extends Component {
 
     this.state = {};
   }
-
 
   render() {
     const { movie, previous } = this.props;

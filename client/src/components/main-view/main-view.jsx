@@ -26,7 +26,7 @@ export class MainView extends Component {
   }
 
   componentDidMount() {
-    const endpoint = 'https://rhubarb-crisp-92657.herokuapp.com/movies';
+    const endpoint = "https://rhubarb-crisp-92657.herokuapp.com/movies";
     axios.get(endpoint)
       .then(res => {
         console.log(res.data[0]);
@@ -35,7 +35,7 @@ export class MainView extends Component {
       .catch(err => console.log(err));
   }
 
-/*clicking movie to get more info*/
+
   onMovieClick(movie) {
     this.setState({
       selectedMovie: movie
@@ -48,21 +48,19 @@ export class MainView extends Component {
     });
   }
 
-  onRegister () {
-      if(!this.state.register){
-        this.setState({register: true});
-      }else{
-        this.setState({register: false});
-      }
-    };
+  onRegister = () => {
+    if(!this.state.register){
+      this.setState({register: true});
+    }else{
+      this.setState({register: false});
+    }
+  }
 
-   /* This overrides the render() method of the superclass, No need to call super() though, as it does nothing by default */
   render() {
-    /* if the state isn't initialized, this will throw on runtime, before the data is initially loaded */
     const { movies, selectedMovie, user, register } = this.state;
+
     if (!user && !register) return <LoginView onClick={this.onRegister} onLoggedIn={user => this.onLoggedIn(user)} />
-    if (register) return <RegistrationView  onClick={ this.onRegister.bind(this) }  />
-  /* before the movies have been loaded */
+    if (register) return <RegistrationView  onClick={this.onRegister}  />
     if (!movies) return <div className="main-view" />;
 
     return (
@@ -75,11 +73,13 @@ export class MainView extends Component {
                 movies.map(movie => (
                   <Col key={movie._id} xs={12} sm={6} md={4}>
                   <MovieCard key={movie._id} movie={movie} click={movie => this.onMovieClick(movie)} />
-                   </Col>
-              ))
-            )}
+                  </Col>
+                ))
+              )
+            }
           </Row>
         </Container>
+
       </div>
     );
   }

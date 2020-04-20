@@ -1,20 +1,24 @@
-.movie-view-card {
-  padding: 20px;
+.added {
+  display: inline;
 }
-.movie-view-card .movie-view {
+
+.movie-card {
+  margin: 0 auto;
+}
+.movie-view {
   text-align: center;
 }
-.movie-view-card .movie-view .label {
+.movie-view .label {
   font-weight: 700;
 }
-.movie-view-card .movie-view .movie-title, .movie-view-card .movie-view .movie-description, .movie-view-card .movie-view .movie-genre, .movie-view-card .movie-view .movie-director, .movie-view-card .movie-view .back-button {
+.movie-view .movie-ImageURL,
+.movie-view .movie-Title,
+.movie-view .movie-Year,
+.movie-view .movie-Description,
+.movie-view .movie-Genre,
+.movie-view .movie-Director,
+.movie-view .movie-Actors .back-button {
   text-align: left;
-}
-.movie-view-card .movie-view .buttons-container {
-  padding: 10px 0 0 0;
-}
-.movie-view-card img {
-  width: 300px;
 }
 .login-form {
   max-width: 500px;
@@ -30,12 +34,10 @@
   max-width: 500px;
   margin: 0px auto;
 }
-.registrationForm .registration-card {
-  padding: 20px;
+.my-flix {
+  color: steelblue;
 }
-.registrationForm .registration-card .registration-title {
-  text-align: center;
-}
+
 .app-container {
   margin: 50px 0;
   font-family: "Roboto", sans-serif;

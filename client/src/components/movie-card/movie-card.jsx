@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
+/*sources of all Individual files and folders*/
+import "./movie-card.scss";
+
 export class MovieCard extends Component {
   render() {
     /* This is given to the <MovieCard/> component by the outer world which, in this case, is `MainView`, */
@@ -40,6 +43,6 @@ MovieCard.propTypes = {
     }),
     Featured: PropTypes.bool
   }).isRequired,
-    Actors:PropTypes.string.isRequired,
+    Actors:PropTypes.string,
     click: PropTypes.func.isRequired
 };
