@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
-import axios from 'axios';
 
 /*sources of Bootstrap code*/
 import Form from "react-bootstrap/Form";
@@ -14,31 +13,22 @@ export const LoginView = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-        e.preventDefault();
+  const handleSubmit = () => {
+    console.log(username, password);
+    props.onLoggedIn(username);
+  }
 
-      axios.post('https://rhubarb-crisp-92657.herokuapp.com/login', {
-      Username: username,
-      Password: password
-    })
-    .then(response => {
-      const data = response.data;
-      props.onLoggedIn(data);
-    })
-    .catch(e => {
-      console.log('no such user')
-    });
-  };
 
-    return (
-        <Container className="login-form">
+  return (
+    <Container className="login-form">
       <Form>
         <Form.Group controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>
-          <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
+          <Form.Control type="email" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
           <Form.Text className="text-muted">
           </Form.Text>
         </Form.Group>
+
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
@@ -54,8 +44,9 @@ export const LoginView = (props) => {
         </Form.Text>
       </Form>
     </Container>
-    )
+  )
 }
+
 LoginView.propTypes = {
-    onLoggedIn: PropTypes.func.isRequired
+  onLoggedIn: PropTypes.func.isRequired
 }

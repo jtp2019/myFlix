@@ -13,70 +13,57 @@ import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
 
 export class MainView extends Component {
-  constructor() {
-    super();
-
+  constructor(props) {
+    /* Call the superclass constructor so React can initialize it */
+    super(props);
+    /* Initialize the state to an empty object so we can destructure it later */
     this.state = {
       movies: null,
-      selectMovie: null,
+      selectedMovie: null,
       user: null,
-      register: false
+      register: false,
     };
   }
 
-  getMovies(token) {
-  axios.get('https://rhubarb-crisp-92657.herokuapp.com/movies', {
-    headers: { Authorization: `Bearer ${token}`}
-  })
-  .then(response => {
-    // Assign the result to the state
-    this.setState({
-      movies: response.data
-    });
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}
-//
-// onLoggedIn(user) {
-//   this.setState({
-//     user,
-//   });
-// }
+  componentDidMount() {
+    const endpoint = "https://rhubarb-crisp-92657.herokuapp.com/movies";
+    axios
+      .get(endpoint)
+      .then((res) => {
+        console.log(res.data[0]);
+        this.setState({ movies: res.data });
+      })
+      .catch((err) => console.log(err));
+  }
+  /*clicking movie to get more info*/
 
-  onMovieClick = (movie) => {
+  onMovieClick(movie) {
     this.setState({
-      selectedMovie: movie
+      selectedMovie: movie,
     });
   }
 
-  onLoggedIn(authData) {
-  console.log(authData);
-  this.setState({
-    user: authData.user.Username
-  });
-
-  localStorage.setItem('token', authData.token);
-  localStorage.setItem('user', authData.user.Username);
-  this.getMovies(authData.token);
-}
+  onLoggedIn(user) {
+    this.setState({
+      user,
+    });
+  }
 
   onRegister = () => {
-    const { register } = this.state;
-
-    if (!register) {
-      this.setState({ register: true });
-    } else {
-      this.setState({ register: false });
+    if(!this.state.register){
+      this.setState({register: true});
+    }else{
+      this.setState({register: false});
     }
   }
 
+  /* This overrides the render() method of the superclass, No need to call super() though, as it does nothing by default */
+
   render() {
     const { movies, selectedMovie, user, register } = this.state;
-
     if (!user && !register) return <LoginView onClick={this.onRegister} onLoggedIn={user => this.onLoggedIn(user)} />
-    if (register) return <RegistrationView onClick={this.onRegister} />
+    if (register) return <RegistrationView  onClick={this.onRegister}  />
+    /* before the movies have been loaded */
     if (!movies) return <div className="main-view" />;
 
     return (
@@ -84,17 +71,31 @@ export class MainView extends Component {
         <Container>
           <Row>
             {selectedMovie ? (
-              <MovieView movie={selectedMovie} previous={movie => this.onMovieClick(!movie)} />
+              <MovieView
+                movie={selectedMovie}
+                previous={(movie) => this.onMovieClick(!movie)}
+              />
             ) : (
                 movies.map(movie => (
                   <Col key={movie._id} xs={12} sm={6} md={4}>
-                    <MovieCard key={movie._id} movie={movie} click={movie => this.onMovieClick(movie)} />
+                  <MovieCard key={movie._id} movie={movie} click={movie => this.onMovieClick(movie)} />
                   </Col>
                 ))
               )
             }
+              movies.map((movie) => (
+                <Col key={movie._id} xs={12} sm={6} md={4}>
+                  <MovieCard
+                    key={movie._id}
+                    movie={movie}
+                    click={(movie) => this.onMovieClick(movie)}
+                  />
+                </Col>
+              ))
+            )}
           </Row>
         </Container>
+
       </div>
     );
   }
