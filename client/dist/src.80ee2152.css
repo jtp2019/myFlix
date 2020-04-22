@@ -1,0 +1,31 @@
+.app-container {
+  margin: 50px;
+  padding-left: 25px;
+  font-family: "Roboto", sans-serif;
+}
+
+h6 {
+  font-size: 10px;
+  font-family: Lobster, cursive;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 5%;
+  background-image: -o-linear-gradient(blue, pink, MediumVioletRed);
+  background-image: linear-gradient(blue, pink, MediumVioletRed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-title {
+  font-size: 24px;
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2%;
+  background-image: -o-linear-gradient(red, green);
+  background-image: linear-gradient(red, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*# sourceMappingURL=/src.80ee2152.css.map */
