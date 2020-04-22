@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.scss"],"names":[],"mappings":"AACA;EACE,OAFM;;;AAIR;EACA;EACA","file":"src.80ee2152.css","sourceRoot":"..\\src","sourcesContent":["$color: steelblue;\r\n.my-flix {\r\n  color: $color;\r\n}\r\n.app-container {\r\nmargin: 50px 0;\r\nfont-family: 'Roboto', sans-serif;\r\n}\r\n"]}

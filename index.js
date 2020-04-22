@@ -59,7 +59,6 @@ let allowedOrigins = [
   "https://testsite.com",
   "https://rhubarb-crisp-92657.herokuapp.com/",
   "http://localhost:1234",
-  "https://cors-anywhere.herokuapp.com/"
 ];
 
 /*INCORPORATING AUTHORIZATION INTO THE API ENDPOINTS*/
