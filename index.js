@@ -59,13 +59,14 @@ let allowedOrigins = [
   "https://testsite.com",
   "https://rhubarb-crisp-92657.herokuapp.com/",
   "http://localhost:1234",
+  "https://cors-anywhere.herokuapp.com/"
 ];
 
 /*INCORPORATING AUTHORIZATION INTO THE API ENDPOINTS*/
 /***MOVIE REQUESTS(5)***/
 /* Gets the list of data about ALL movies (Return a list of ALL movies to the user)*/
-app.get('/movies', passport.authenticate('jwt', {session : false}), (req, res) => {
-//app.get("/movies", (req, res) => {
+//app.get('/movies', passport.authenticate('jwt', {session : false}), (req, res) => {
+app.get("/movies", (req, res) => {
   Movies.find()
     .then((movies) => {
       res.status(201).json(movies);
