@@ -1,3 +1,33 @@
+.added {
+  display: inline;
+}
+
+.movie-card {
+  margin: 0 auto;
+}
+.movie-view {
+  text-align: center;
+}
+.movie-view .label {
+  font-weight: 700;
+}
+.movie-view .movie-ImageURL,
+.movie-view .movie-Title,
+.movie-view .movie-Year,
+.movie-view .movie-Description,
+.movie-view .movie-Genre,
+.movie-view .movie-Director,
+.movie-view .movie-Actors .back-button {
+  text-align: left;
+}
+.login-form {
+  max-width: 500px;
+  margin: 0px auto;
+}
+.registrationForm {
+  max-width: 500px;
+  margin: 0px auto;
+}
 .app-container {
   margin: 50px;
   padding-left: 25px;
@@ -9,7 +39,7 @@ h6 {
   font-family: Lobster, cursive;
   font-weight: 700;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 2%;
   background-image: -o-linear-gradient(blue, pink, MediumVioletRed);
   background-image: linear-gradient(blue, pink, MediumVioletRed);
   -webkit-background-clip: text;
