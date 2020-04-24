@@ -14,8 +14,9 @@ export function RegistrationView() {
   const [birthday, createDob] = useState('');
 
   const handleSubmit = () => {
+    //e.preventDefault();
     console.log(username, password);
-    props.onRegister(username);
+    props.onLoggedIn(username,password);
   }
 
     return (
@@ -57,7 +58,7 @@ export function RegistrationView() {
            <Form.Group controlId="formBasicPassword">
              <Form.Label>Password</Form.Label>
              <Form.Control
-               type="password"
+               type="current-password"
                placeholder="Password"
                value={password}
                onChange={(e) => createPassword(e.target.value)}
@@ -79,10 +80,14 @@ export function RegistrationView() {
         <Button variant="primary" type="submit" onClick={handleSubmit}>
           Register
         </Button>
-        <Form.Text className="text-muted">
-          Already have an account? Log in <a href="#" onClick={() => props.onClick()}>HERE</a>
-        </Form.Text>
+        <Form.Group controlId="newUser">
+          <Form.Text>
+              Already have an account? Login
+            <Button variant="link" onClick={() => (window.location.href = '/')}>
+              HERE
+            </Button>
+          </Form.Text>
+        </Form.Group>
       </Form>
     </Container>
-  )
-}
+  )}

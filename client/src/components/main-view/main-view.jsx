@@ -30,7 +30,7 @@ export class MainView extends Component {
     axios
       .get(endpoint)
       .then((res) => {
-        console.log(res.data[0]);
+        console.log(res.data);
         this.setState({ movies: res.data });
       })
       .catch((err) => console.log(err));
@@ -48,29 +48,23 @@ export class MainView extends Component {
       user,
     });
   }
-   //
-   // onRegister() {
-   // if(!this.state.register){
-   // this.setState({register: true});
-   // }else{
-   //  this.setState({register: false});
-   //  }
-   //  }
 
-  onRegister = () => {
-    if(!this.state.register){
-      this.setState({register: true});
-    }else{
-      this.setState({register: false});
-    }
-  }
+ onRegister = () => {
+   const { register } = this.state;
+
+   if (!register) {
+     this.setState({ register: true });
+   } else {
+     this.setState({ register: false });
+   }
+ }
 
   /* This overrides the render() method of the superclass, No need to call super() though, as it does nothing by default */
 
   render() {
     const { movies, selectedMovie, user, register } = this.state;
     if (!user && !register) return <LoginView onClick={this.onRegister} onLoggedIn={user => this.onLoggedIn(user)} />
-    if (register) return <RegistrationView  onClick={this.onLoggedIn} />
+    if (register) return <RegistrationView onCLick={() => this.alreadyMember()}onloggedIn={(user) => this.onloggedIn(user)}  />
     /* before the movies have been loaded */
     if (!movies) return <div className="main-view" />;
 

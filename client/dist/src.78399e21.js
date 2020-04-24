@@ -30215,7 +30215,7 @@ function ThemeProvider(_ref) {
   var copiedPrefixes = (0, _react.useMemo)(function () {
     return (0, _extends2.default)({}, prefixes);
   }, [prefixes]);
-  return _react.default.createElement(Provider, {
+  return /*#__PURE__*/_react.default.createElement(Provider, {
     value: copiedPrefixes
   }, children);
 }
@@ -30240,7 +30240,7 @@ function createBootstrapComponent(Component, opts) {
     props[forwardRefAs] = ref; // eslint-disable-next-line react/prop-types
 
     var bsPrefix = useBootstrapPrefix(props.bsPrefix, prefix);
-    return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+    return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
       bsPrefix: bsPrefix
     }));
   }, {
@@ -30283,7 +30283,7 @@ var Container = _react.default.forwardRef(function (_ref, ref) {
       props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "fluid", "as", "className"]);
   var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'container');
   var suffix = typeof fluid === 'string' ? "-" + fluid : '-fluid';
-  return _react.default.createElement(Component, (0, _extends2.default)({
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
     ref: ref
   }, props, {
     className: (0, _classnames.default)(className, fluid ? "" + prefix + suffix : prefix)
@@ -30350,7 +30350,7 @@ function (_ref, ref) {
     spans.push(prefix); // plain 'col'
   }
 
-  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
     className: _classnames.default.apply(void 0, [className].concat(spans, classes))
   }));
@@ -30408,7 +30408,7 @@ var Row = _react.default.forwardRef(function (_ref, ref) {
     var infix = brkPoint !== 'xs' ? "-" + brkPoint : '';
     if (cols != null) classes.push("" + sizePrefix + infix + "-" + cols);
   });
-  return _react.default.createElement(Component, (0, _extends2.default)({
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
     ref: ref
   }, props, {
     className: _classnames.default.apply(void 0, [className, decoratedBsPrefix, noGutters && 'no-gutters'].concat(classes))
@@ -31397,7 +31397,7 @@ var SafeAnchor = _react.default.forwardRef(function (_ref, ref) {
     props['aria-disabled'] = true;
   }
 
-  return _react.default.createElement(Component, (0, _extends2.default)({
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
     ref: ref
   }, props, {
     onClick: handleClick,
@@ -31451,7 +31451,7 @@ var Button = _react.default.forwardRef(function (_ref, ref) {
   var classes = (0, _classnames.default)(className, prefix, active && 'active', prefix + "-" + variant, block && prefix + "-block", size && prefix + "-" + size);
 
   if (props.href) {
-    return _react.default.createElement(_SafeAnchor.default, (0, _extends2.default)({}, props, {
+    return /*#__PURE__*/_react.default.createElement(_SafeAnchor.default, (0, _extends2.default)({}, props, {
       as: as,
       ref: ref,
       className: (0, _classnames.default)(classes, props.disabled && 'disabled')
@@ -31467,7 +31467,7 @@ var Button = _react.default.forwardRef(function (_ref, ref) {
   }
 
   var Component = as || 'button';
-  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     className: classes
   }));
 });
@@ -31532,7 +31532,7 @@ function createWithBsPrefix(prefix, _temp) {
         Tag = _ref2$as === void 0 ? Component : _ref2$as,
         props = (0, _objectWithoutPropertiesLoose2.default)(_ref2, ["className", "bsPrefix", "as"]);
     var resolvedPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, prefix);
-    return _react.default.createElement(Tag, (0, _extends2.default)({
+    return /*#__PURE__*/_react.default.createElement(Tag, (0, _extends2.default)({
       ref: ref,
       className: (0, _classnames.default)(className, resolvedPrefix)
     }, props));
@@ -31560,7 +31560,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _default = function _default(className) {
   return _react.default.forwardRef(function (p, ref) {
-    return _react.default.createElement("div", (0, _extends2.default)({}, p, {
+    return /*#__PURE__*/_react.default.createElement("div", (0, _extends2.default)({}, p, {
       ref: ref,
       className: (0, _classnames.default)(p.className, className)
     }));
@@ -31616,7 +31616,7 @@ function (_ref, ref) {
       Component = _ref$as === void 0 ? 'img' : _ref$as,
       props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "variant", "as"]);
   var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'card-img');
-  return _react.default.createElement(Component, (0, _extends2.default)({
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
     ref: ref,
     className: (0, _classnames.default)(variant ? prefix + "-" + variant : prefix, className)
   }, props));
@@ -31682,13 +31682,13 @@ var Card = _react.default.forwardRef(function (_ref, ref) {
       cardHeaderBsPrefix: prefix + "-header"
     };
   }, [prefix]);
-  return _react.default.createElement(_CardContext.default.Provider, {
+  return /*#__PURE__*/_react.default.createElement(_CardContext.default.Provider, {
     value: cardContext
-  }, _react.default.createElement(Component, (0, _extends2.default)({
+  }, /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
     ref: ref
   }, props, {
     className: (0, _classnames.default)(className, prefix, bg && "bg-" + bg, text && "text-" + text, border && "border-" + border)
-  }), body ? _react.default.createElement(CardBody, null, children) : children));
+  }), body ? /*#__PURE__*/_react.default.createElement(CardBody, null, children) : children));
 });
 
 Card.displayName = 'Card';
@@ -32156,7 +32156,7 @@ function (_ref, ref) {
       className = _ref.className,
       type = _ref.type,
       props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["as", "className", "type"]);
-  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
     className: (0, _classnames.default)(className, type && type + "-feedback")
   }));
@@ -32231,8 +32231,12 @@ var FormCheckInput = _react.default.forwardRef(function (_ref, ref) {
       controlId = _useContext.controlId,
       custom = _useContext.custom;
 
-  bsPrefix = custom ? (0, _ThemeProvider.useBootstrapPrefix)(bsCustomPrefix, 'custom-control-input') : (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-check-input');
-  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-control-input'] : [bsPrefix, 'form-check-input'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
     id: id || controlId,
     className: (0, _classnames.default)(className, bsPrefix, isValid && 'is-valid', isInvalid && 'is-invalid', isStatic && 'position-static')
@@ -32280,8 +32284,12 @@ var FormCheckLabel = _react.default.forwardRef(function (_ref, ref) {
       controlId = _useContext.controlId,
       custom = _useContext.custom;
 
-  bsPrefix = custom ? (0, _ThemeProvider.useBootstrapPrefix)(bsCustomPrefix, 'custom-control-label') : (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-check-label');
-  return _react.default.createElement("label", (0, _extends2.default)({}, props, {
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-control-label'] : [bsPrefix, 'form-check-label'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/_react.default.createElement("label", (0, _extends2.default)({}, props, {
     ref: ref,
     htmlFor: htmlFor || controlId,
     className: (0, _classnames.default)(className, bsPrefix)
@@ -32354,7 +32362,12 @@ var FormCheck = _react.default.forwardRef(function (_ref, ref) {
       as = _ref$as === void 0 ? 'input' : _ref$as,
       props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "inline", "disabled", "isValid", "isInvalid", "feedback", "className", "style", "title", "type", "label", "children", "custom", "as"]);
   var custom = type === 'switch' ? true : propCustom;
-  bsPrefix = custom ? (0, _ThemeProvider.useBootstrapPrefix)(bsCustomPrefix, 'custom-control') : (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-check');
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-control'] : [bsPrefix, 'form-check'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
 
   var _useContext = (0, _react.useContext)(_FormContext.default),
       controlId = _useContext.controlId;
@@ -32367,7 +32380,7 @@ var FormCheck = _react.default.forwardRef(function (_ref, ref) {
   }, [controlId, custom, id]);
   var hasLabel = label != null && label !== false && !children;
 
-  var input = _react.default.createElement(_FormCheckInput.default, (0, _extends2.default)({}, props, {
+  var input = /*#__PURE__*/_react.default.createElement(_FormCheckInput.default, (0, _extends2.default)({}, props, {
     type: type === 'switch' ? 'checkbox' : type,
     ref: ref,
     isValid: isValid,
@@ -32377,14 +32390,14 @@ var FormCheck = _react.default.forwardRef(function (_ref, ref) {
     as: as
   }));
 
-  return _react.default.createElement(_FormContext.default.Provider, {
+  return /*#__PURE__*/_react.default.createElement(_FormContext.default.Provider, {
     value: innerFormContext
-  }, _react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     style: style,
     className: (0, _classnames.default)(className, bsPrefix, custom && "custom-" + type, inline && bsPrefix + "-inline")
-  }, children || _react.default.createElement(_react.default.Fragment, null, input, hasLabel && _react.default.createElement(_FormCheckLabel.default, {
+  }, children || /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input, hasLabel && /*#__PURE__*/_react.default.createElement(_FormCheckLabel.default, {
     title: title
-  }, label), (isValid || isInvalid) && _react.default.createElement(_Feedback.default, {
+  }, label), (isValid || isInvalid) && /*#__PURE__*/_react.default.createElement(_Feedback.default, {
     type: isValid ? 'valid' : 'invalid'
   }, feedback))));
 });
@@ -32438,8 +32451,13 @@ var FormFileInput = _react.default.forwardRef(function (_ref, ref) {
       custom = _useContext.custom;
 
   var type = 'file';
-  bsPrefix = custom ? (0, _ThemeProvider.useBootstrapPrefix)(bsCustomPrefix, 'custom-file-input') : (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-control-file');
-  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-file-input'] : [bsPrefix, 'form-control-file'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
     id: id || controlId,
     type: type,
@@ -32488,8 +32506,12 @@ var FormFileLabel = _react.default.forwardRef(function (_ref, ref) {
       controlId = _useContext.controlId,
       custom = _useContext.custom;
 
-  bsPrefix = custom ? (0, _ThemeProvider.useBootstrapPrefix)(bsCustomPrefix, 'custom-file-label') : (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-file-label');
-  return _react.default.createElement("label", (0, _extends2.default)({}, props, {
+  var _ref2 = custom ? [bsCustomPrefix, 'custom-file-label'] : [bsPrefix, 'form-file-label'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+  return /*#__PURE__*/_react.default.createElement("label", (0, _extends2.default)({}, props, {
     ref: ref,
     htmlFor: htmlFor || controlId,
     className: (0, _classnames.default)(className, bsPrefix),
@@ -32560,7 +32582,12 @@ var FormFile = _react.default.forwardRef(function (_ref, ref) {
       _ref$inputAs = _ref.inputAs,
       inputAs = _ref$inputAs === void 0 ? 'input' : _ref$inputAs,
       props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["id", "bsPrefix", "bsCustomPrefix", "disabled", "isValid", "isInvalid", "feedback", "className", "style", "label", "children", "custom", "lang", "data-browse", "as", "inputAs"]);
-  bsPrefix = custom ? (0, _ThemeProvider.useBootstrapPrefix)(bsCustomPrefix, 'custom') : (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-file');
+
+  var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-file'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
   var type = 'file';
 
   var _useContext = (0, _react.useContext)(_FormContext.default),
@@ -32574,7 +32601,7 @@ var FormFile = _react.default.forwardRef(function (_ref, ref) {
   }, [controlId, custom, id]);
   var hasLabel = label != null && label !== false && !children;
 
-  var input = _react.default.createElement(_FormFileInput.default, (0, _extends2.default)({}, props, {
+  var input = /*#__PURE__*/_react.default.createElement(_FormFileInput.default, (0, _extends2.default)({}, props, {
     ref: ref,
     isValid: isValid,
     isInvalid: isInvalid,
@@ -32583,14 +32610,14 @@ var FormFile = _react.default.forwardRef(function (_ref, ref) {
     lang: lang
   }));
 
-  return _react.default.createElement(_FormContext.default.Provider, {
+  return /*#__PURE__*/_react.default.createElement(_FormContext.default.Provider, {
     value: innerFormContext
-  }, _react.default.createElement(Component, {
+  }, /*#__PURE__*/_react.default.createElement(Component, {
     style: style,
     className: (0, _classnames.default)(className, bsPrefix, custom && "custom-" + type)
-  }, children || _react.default.createElement(_react.default.Fragment, null, custom ? _react.default.createElement(_react.default.Fragment, null, input, hasLabel && _react.default.createElement(_FormFileLabel.default, {
+  }, children || /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, custom ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, input, hasLabel && /*#__PURE__*/_react.default.createElement(_FormFileLabel.default, {
     "data-browse": dataBrowse
-  }, label)) : _react.default.createElement(_react.default.Fragment, null, hasLabel && _react.default.createElement(_FormFileLabel.default, null, label), input), (isValid || isInvalid) && _react.default.createElement(_Feedback.default, {
+  }, label)) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, hasLabel && /*#__PURE__*/_react.default.createElement(_FormFileLabel.default, null, label), input), (isValid || isInvalid) && /*#__PURE__*/_react.default.createElement(_Feedback.default, {
     type: isValid ? 'valid' : 'invalid'
   }, feedback))));
 });
@@ -32716,7 +32743,11 @@ var FormControl = _react.default.forwardRef(function (_ref, ref) {
   var _useContext = (0, _react.useContext)(_FormContext.default),
       controlId = _useContext.controlId;
 
-  bsPrefix = custom ? (0, _ThemeProvider.useBootstrapPrefix)(bsCustomPrefix, 'custom') : (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-control');
+  var _ref2 = custom ? [bsCustomPrefix, 'custom'] : [bsPrefix, 'form-control'],
+      prefix = _ref2[0],
+      defaultPrefix = _ref2[1];
+
+  bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
   var classes;
 
   if (plaintext) {
@@ -32742,7 +32773,7 @@ var FormControl = _react.default.forwardRef(function (_ref, ref) {
   }
 
   "development" !== "production" ? (0, _warning.default)(controlId == null || !id, '`controlId` is ignored on `<FormControl>` when `id` is specified.') : void 0;
-  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     type: type,
     ref: ref,
     readOnly: readOnly,
@@ -32795,9 +32826,9 @@ var FormGroup = _react.default.forwardRef(function (_ref, ref) {
       controlId: controlId
     };
   }, [controlId]);
-  return _react.default.createElement(_FormContext.default.Provider, {
+  return /*#__PURE__*/_react.default.createElement(_FormContext.default.Provider, {
     value: context
-  }, _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+  }, /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
     className: (0, _classnames.default)(className, bsPrefix)
   }), children));
@@ -32860,12 +32891,14 @@ var FormLabel = _react.default.forwardRef(function (_ref, ref) {
   var classes = (0, _classnames.default)(className, bsPrefix, srOnly && 'sr-only', column && columnClass);
   "development" !== "production" ? (0, _warning.default)(controlId == null || !htmlFor, '`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.') : void 0;
   htmlFor = htmlFor || controlId;
-  if (column) return _react.default.createElement(_Col.default, (0, _extends2.default)({
+  if (column) return /*#__PURE__*/_react.default.createElement(_Col.default, (0, _extends2.default)({
     as: "label",
     className: classes,
     htmlFor: htmlFor
   }, props));
-  return (// eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
+  return (
+    /*#__PURE__*/
+    // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
     _react.default.createElement(Component, (0, _extends2.default)({
       ref: ref,
       className: classes,
@@ -32907,7 +32940,7 @@ function (_ref, ref) {
       muted = _ref.muted,
       props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "as", "muted"]);
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form-text');
-  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
     className: (0, _classnames.default)(className, bsPrefix, muted && 'text-muted')
   }));
@@ -32933,7 +32966,7 @@ var _FormCheck = _interopRequireDefault(require("./FormCheck"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Switch = _react.default.forwardRef(function (props, ref) {
-  return _react.default.createElement(_FormCheck.default, (0, _extends2.default)({}, props, {
+  return /*#__PURE__*/_react.default.createElement(_FormCheck.default, (0, _extends2.default)({}, props, {
     ref: ref,
     type: "switch"
   }));
@@ -32993,7 +33026,7 @@ var Form = _react.default.forwardRef(function (_ref, ref) {
       Component = _ref$as === void 0 ? 'form' : _ref$as,
       props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "inline", "className", "validated", "as"]);
   bsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'form');
-  return _react.default.createElement(Component, (0, _extends2.default)({}, props, {
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({}, props, {
     ref: ref,
     className: (0, _classnames.default)(className, validated && 'was-validated', inline && bsPrefix + "-inline")
   }));
@@ -33066,9 +33099,9 @@ var LoginView = function LoginView(props) {
       setPassword = _useState4[1];
 
   var handleSubmit = function handleSubmit() {
-    // e.preventDefault();
+    //e.preventDefault();
     console.log(username, password);
-    props.onLoggedIn(username);
+    props.onLoggedIn(username, password);
   };
 
   return _react.default.createElement(_Container.default, {
@@ -33076,7 +33109,7 @@ var LoginView = function LoginView(props) {
   }, _react.default.createElement(_Form.default, null, _react.default.createElement(_Form.default.Group, {
     controlId: "formBasicUsername"
   }, _react.default.createElement(_Form.default.Label, null, "Username"), _react.default.createElement(_Form.default.Control, {
-    type: "email",
+    type: "text",
     placeholder: "Enter username",
     value: username,
     onChange: function onChange(e) {
@@ -33184,8 +33217,9 @@ function RegistrationView() {
       createDob = _useState10[1];
 
   var handleSubmit = function handleSubmit() {
+    //e.preventDefault();
     console.log(username, password);
-    props.onRegister(username);
+    props.onLoggedIn(username, password);
   };
 
   return _react.default.createElement(_Container.default, {
@@ -33224,7 +33258,7 @@ function RegistrationView() {
   }, "We will never share your email with anyone else.")), _react.default.createElement(_Form.default.Group, {
     controlId: "formBasicPassword"
   }, _react.default.createElement(_Form.default.Label, null, "Password"), _react.default.createElement(_Form.default.Control, {
-    type: "password",
+    type: "current-password",
     placeholder: "Password",
     value: password,
     onChange: function onChange(e) {
@@ -33248,14 +33282,14 @@ function RegistrationView() {
     variant: "primary",
     type: "submit",
     onClick: handleSubmit
-  }, "Register"), _react.default.createElement(_Form.default.Text, {
-    className: "text-muted"
-  }, "Already have an account? Log in ", _react.default.createElement("a", {
-    href: "#",
+  }, "Register"), _react.default.createElement(_Form.default.Group, {
+    controlId: "newUser"
+  }, _react.default.createElement(_Form.default.Text, null, "Already have an account? Login", _react.default.createElement(_Button.default, {
+    variant: "link",
     onClick: function onClick() {
-      return props.onClick();
+      return window.location.href = '/';
     }
-  }, "HERE"))));
+  }, "HERE")))));
 }
 },{"react":"../node_modules/react/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","./registration-view.scss":"components/registration-view/registration-view.scss"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
 "use strict";
@@ -33326,7 +33360,9 @@ var MainView = /*#__PURE__*/function (_Component) {
     /* Initialize the state to an empty object so we can destructure it later */
 
     _this.onRegister = function () {
-      if (!_this.state.register) {
+      var register = _this.state.register;
+
+      if (!register) {
         _this.setState({
           register: true
         });
@@ -33354,7 +33390,7 @@ var MainView = /*#__PURE__*/function (_Component) {
       var endpoint = "https://rhubarb-crisp-92657.herokuapp.com/movies";
 
       _axios.default.get(endpoint).then(function (res) {
-        console.log(res.data[0]);
+        console.log(res.data);
 
         _this2.setState({
           movies: res.data
@@ -33378,15 +33414,7 @@ var MainView = /*#__PURE__*/function (_Component) {
       this.setState({
         user: user
       });
-    } //
-    // onRegister() {
-    // if(!this.state.register){
-    // this.setState({register: true});
-    // }else{
-    //  this.setState({register: false});
-    //  }
-    //  }
-
+    }
   }, {
     key: "render",
 
@@ -33406,7 +33434,12 @@ var MainView = /*#__PURE__*/function (_Component) {
         }
       });
       if (register) return _react.default.createElement(_registrationView.RegistrationView, {
-        onClick: this.onLoggedIn
+        onCLick: function onCLick() {
+          return _this3.alreadyMember();
+        },
+        onloggedIn: function onloggedIn(user) {
+          return _this3.onloggedIn(user);
+        }
       });
       /* before the movies have been loaded */
 
@@ -33534,7 +33567,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64277" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51963" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

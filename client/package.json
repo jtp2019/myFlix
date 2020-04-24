@@ -10,12 +10,12 @@
   "author": "Jacqueline Purification",
   "license": "ISC",
   "dependencies": {
-    "@types/react": "^16.9.32",
+    "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "axios": "^0.19.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-bootstrap": "^1.0.0",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
@@ -25,7 +25,5 @@
     "babel-preset-react": "^6.24.1",
     "sass": "^1.26.3"
   },
-  "optionalDependencies": {
-    "fsevents": "^2.1.2"
-  }
+  "optionalDependencies": {}
 }

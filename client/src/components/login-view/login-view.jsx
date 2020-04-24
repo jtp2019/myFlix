@@ -12,9 +12,9 @@ export const LoginView = (props) => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    // e.preventDefault();
+  //e.preventDefault();
     console.log(username, password);
-    props.onLoggedIn(username);
+   props.onLoggedIn(username, password);
   }
 
 
@@ -23,7 +23,7 @@ export const LoginView = (props) => {
       <Form>
         <Form.Group controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>
-          <Form.Control type="email" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
+          <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
           <Form.Text className="text-muted">
           </Form.Text>
         </Form.Group>
