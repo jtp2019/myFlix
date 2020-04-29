@@ -66,8 +66,7 @@ const handleSubmit = (e) => {
 
           <Form.Group controlId="newUser">
           <Form.Text>
-           No Account? Sign up for a new account
-                    New user? Sign up for an account <a href="#" onClick={() => props.onClick()}>HERE</a>                     New user? Sign up for a new account <a href="#" onClick={() => props.onClick()}>HERE</a>
+                 New user? Sign up for a new account <a href="#" onClick={() => props.onClick()}>HERE</a>
                  </Form.Text>
                 </Form.Group>
                </Form>
