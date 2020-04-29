@@ -27,8 +27,8 @@ h6 {
   font-weight: 700;
   text-align: center;
   margin-top: 2%;
-  background-image: -o-linear-gradient(red, green);
-  background-image: linear-gradient(red, green);
+  background-image: -o-linear-gradient(red, orange, green);
+  background-image: linear-gradient(red, orange, green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import axios from "axios";
+//import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+/*sources of Bootstrap code*/
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import Card from 'react-bootstrap/Card';
 
+/*sources of all Individual files and folders*/
 import "./registration-view.scss";
 
 export function RegistrationView() {
@@ -13,15 +18,35 @@ export function RegistrationView() {
   const [email, createEmail] = useState('');
   const [birthday, createDob] = useState('');
 
-  const handleSubmit = () => {
-    //e.preventDefault();
-    console.log(username, password);
-    props.onLoggedIn(username,password);
-  }
+  // const handleSubmit = () => {
+  //  e.preventDefault();
+  //   console.log(username, password);
+  //   props.onLoggedIn(username,password);
+  // }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post('https://rhubarb-crisp-92657.herokuapp.com/users', {
+      Name: name,
+      Username: username,
+      Password: password,
+      Email: email,
+      Birthday: birthday,
+    })
+      .then((response) => {
+        const { data } = response;
+        console.log(data);
+        window.open('/', '_self'); // with '_self' page will open in the current tab
+      })
+      .catch((error) => {
+        console.log('error registering the user'+ error);
+      });
+  };
 
-    return (
-       <Container className="registrationContainer">
-           <Form className="registrationForm">
+  return (
+    <Container className="registrationForm">
+      <Card className="registration-card">
+        <h2 className="registration-title">Sign Up</h2>
+        <Form>
            <Form.Group controlId="formBasicName">
              <Form.Label>Name</Form.Label>
              <Form.Control
@@ -80,14 +105,11 @@ export function RegistrationView() {
         <Button variant="primary" type="submit" onClick={handleSubmit}>
           Register
         </Button>
-        <Form.Group controlId="newUser">
-          <Form.Text>
-              Already have an account? Login
-            <Button variant="link" onClick={() => (window.location.href = '/')}>
-              HERE
-            </Button>
-          </Form.Text>
-        </Form.Group>
+        <Form.Text className="text-muted">
+          Already have an account? Log in <a href="#" onClick={() => props.onClick()}>HERE</a>
+        </Form.Text>
       </Form>
+     </Card>
     </Container>
-  )}
+   )
+  }

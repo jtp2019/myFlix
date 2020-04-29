@@ -1,9 +1,6 @@
-.added {
-  display: inline;
-}
-
-.movie-card {
-  margin: 0 auto;
+.movie-img {
+  width: 500px;
+  height: 500px;
 }
 .movie-view {
   text-align: center;
@@ -20,13 +17,20 @@
 .movie-view .movie-Actors .back-button {
   text-align: left;
 }
+
+.cardimg {
+  width: 500px;
+  height: 500px;
+}
 .login-form {
   max-width: 500px;
   margin: 0px auto;
 }
-.registrationForm {
-  max-width: 500px;
-  margin: 0px auto;
+.login-form .login-card {
+  padding: 20px;
+}
+.login-form .login-card .login-title {
+  text-align: center;
 }
 .app-container {
   margin: 50px;
@@ -52,8 +56,8 @@ h6 {
   font-weight: 700;
   text-align: center;
   margin-top: 2%;
-  background-image: -o-linear-gradient(red, green);
-  background-image: linear-gradient(red, green);
+  background-image: -o-linear-gradient(red, orange, green);
+  background-image: linear-gradient(red, orange, green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
